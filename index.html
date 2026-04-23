@@ -1,126 +1,2117 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thèse · Christophe Deschamps · 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #0d1f3c;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-}
-.eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 1.5rem;
-    display: block;
-}
-h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.4rem, 4vw, 2.2rem);
-    line-height: 1.3;
-    max-width: 640px;
-    margin-bottom: 1rem;
-    color: white;
-}
-.sub {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.5);
-    max-width: 520px;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-}
-.sub strong {
-    color: rgba(255,255,255,0.75);
-    font-weight: 500;
-}
-.rule {
-    width: 40px;
-    height: 3px;
-    background: #e67e22;
-    border-radius: 2px;
-    margin: 1.5rem auto;
-}
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: #e67e22;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.9rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.2s;
-    margin-bottom: 2.5rem;
-}
-.btn:hover { background: #cf6d17; }
-.coming-soon {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.06em;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.5rem;
-    max-width: 360px;
-    line-height: 1.7;
-}
-.coming-soon span {
-    color: rgba(255,255,255,0.45);
-    font-weight: 500;
-}
-footer {
-    position: fixed;
-    bottom: 1.25rem;
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.18);
-    letter-spacing: 0.06em;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thèse de doctorat de Christophe Deschamps : La phase d'analyse dans le cycle de la veille stratégique. Conditions d'une mise en œuvre pertinente dans les organisations françaises. Université de Poitiers, 2025.">
+    <title>Thèse Deschamps : L'analyse dans le cycle de la veille stratégique</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+    /* ===========================
+       RESET & VARIABLES
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --navy:        #0d1f3c;
+        --navy-mid:    #1a3563;
+        --navy-light:  #243f73;
+        --orange:      #e67e22;
+        --orange-dark: #c0672c;
+        --orange-pale: #fef3e8;
+        --blue:        #2563eb;
+        --blue-pale:   #dbeafe;
+        --green:       #059669;
+        --green-pale:  #d1fae5;
+        --white:       #ffffff;
+        --off-white:   #f7f8fc;
+        --text:        #1f2937;
+        --muted:       #6b7280;
+        --border:      #e5e7eb;
+        --radius:      10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--text);
+        line-height: 1.75;
+        overflow-x: hidden;
+        background: var(--white);
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+        line-height: 1.2;
+    }
+
+    p { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ===========================
+       NAVIGATION
+    =========================== */
+    nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 900;
+        padding: 0.9rem 2rem;
+        background: rgba(13, 31, 60, 0.96);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+        font-family: 'Playfair Display', serif;
+        color: rgba(255,255,255,0.9);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+    }
+
+    .nav-brand span { color: var(--orange); }
+
+    .nav-links {
+        display: flex;
+        gap: 1.75rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--orange); }
+
+    @media (max-width: 680px) { .nav-links { display: none; } }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+        min-height: 100vh;
+        background: var(--navy);
+        background-image:
+            radial-gradient(ellipse at 65% 40%, rgba(230,126,34,0.09) 0%, transparent 55%),
+            linear-gradient(160deg, #0d1f3c 0%, #1a3563 50%, #0f2648 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7rem 2rem 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Subtle dot grid */
+    #hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+        text-align: center;
+    }
+
+    .hero-eyebrow {
+        display: inline-block;
+        color: var(--orange);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+        color: var(--white);
+        font-weight: 700;
+        margin-bottom: 1.1rem;
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: clamp(1rem, 2.2vw, 1.35rem);
+        color: rgba(255,255,255,0.65);
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+    }
+
+    .hero-meta {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.45);
+        line-height: 2;
+        margin-bottom: 3rem;
+    }
+
+    .hero-meta strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+
+    .hero-scroll {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        color: rgba(255,255,255,0.35);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .hero-scroll:hover {
+        color: rgba(255,255,255,0.7);
+    }
+    .hero-scroll:hover .scroll-arrow {
+        border-color: rgba(255,255,255,0.7);
+    }
+
+    .scroll-arrow {
+        width: 24px; height: 24px;
+        border-right: 2px solid var(--orange);
+        border-bottom: 2px solid var(--orange);
+        transform: rotate(45deg);
+        animation: scrollbounce 1.8s ease-in-out infinite;
+        margin-top: 4px;
+    }
+
+    @keyframes scrollbounce {
+        0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
+        50% { transform: rotate(45deg) translateY(5px); opacity: 1; }
+    }
+
+    /* ===========================
+       COMMON SECTION STYLES
+    =========================== */
+    section { padding: 5.5rem 2rem; }
+
+    .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        color: var(--orange);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+        margin-bottom: 0.6rem;
+    }
+
+    .rule {
+        width: 48px;
+        height: 3px;
+        background: var(--orange);
+        margin: 1.1rem 0 2.2rem;
+        border-radius: 2px;
+    }
+
+    /* DARK SECTIONS */
+    .dark {
+        background: var(--navy);
+        color: rgba(255,255,255,0.85);
+    }
+
+    .dark .section-title { color: var(--white); }
+    .dark .eyebrow { color: var(--orange); }
+    .dark p { color: rgba(255,255,255,0.78); }
+    .dark h3 { color: var(--white); }
+
+    /* LIGHT GREY SECTIONS */
+    .grey { background: var(--off-white); }
+
+    /* ===========================
+       BLOCKQUOTE
+    =========================== */
+    blockquote {
+        border-left: 3px solid var(--orange);
+        padding: 1rem 1.5rem;
+        margin: 2rem 0;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    .dark blockquote {
+        background: rgba(255,255,255,0.04);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        color: rgba(255,255,255,0.9);
+    }
+
+    blockquote cite {
+        display: block;
+        font-style: normal;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 0.75rem;
+        color: var(--orange);
+    }
+
+    /* ===========================
+       TWO COLUMN LAYOUTS
+    =========================== */
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .three-col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+    }
+
+    @media (max-width: 780px) {
+        .two-col, .three-col { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+    =========================== */
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+
+    /* ===========================
+       HOT INTERACTIVE
+    =========================== */
+    .hot-interactive {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 2.5rem;
+        align-items: start;
+        margin: 1rem 0 3rem;
+    }
+
+    @media (max-width: 820px) {
+        .hot-interactive { grid-template-columns: 1fr; }
+        .hot-svg-container { max-width: 320px; margin: 0 auto; }
+    }
+
+    .hot-svg-container { width: 100%; }
+    #hotSvg { width: 100%; height: auto; }
+
+    .hot-vtx {
+        transition: r 0.18s, filter 0.18s;
+    }
+    .hot-vtx:hover { filter: url(#glow); }
+    .hot-vtx.active { r: 40; }
+
+    .hot-panel {
+        background: var(--off-white);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        min-height: 260px;
+        border: 1px solid var(--border);
+    }
+
+    .hot-panel-default p { color: var(--text); }
+
+    .hot-panel-content h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.15rem;
+        color: var(--navy);
+        margin: 0.6rem 0 0.75rem;
+    }
+
+    .hot-panel-content p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        margin-bottom: 0.75rem;
+    }
+
+    .hot-panel-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.8rem;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+    }
+
+    .hot-list {
+        list-style: none;
+        font-size: 0.845rem;
+        color: var(--text);
+        margin-bottom: 1rem;
+    }
+
+    .hot-list li {
+        padding: 0.3rem 0 0.3rem 1.3rem;
+        position: relative;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .hot-list li:last-child { border-bottom: none; }
+
+    .hot-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--orange);
+    }
+
+    .hot-ref {
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-style: italic;
+        border-top: 1px solid var(--border);
+        padding-top: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    /* ===========================
+       LEVIERS CLIQUABLES
+    =========================== */
+    .finding-card { cursor: pointer; }
+
+    .finding-card .fdetail {
+        display: none;
+        margin-top: 0.9rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.6;
+    }
+
+    .finding-card.open .fdetail { display: block; }
+
+    .finding-card .ftoggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--orange);
+        letter-spacing: 0.05em;
+    }
+
+    /* ===========================
+       EPIST CARDS
+    =========================== */
+    .epist-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin: 1.75rem 0;
+    }
+
+    @media (max-width: 780px) { .epist-grid { grid-template-columns: 1fr; } }
+
+    .epist-card {
+        background: var(--off-white);
+        border-radius: var(--radius);
+        padding: 1.4rem;
+        border-top: 3px solid var(--orange);
+        position: relative;
+    }
+
+    .epist-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: rgba(230,126,34,0.18);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+    }
+
+    .epist-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+    }
+
+    .epist-card p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
+    .epist-author {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--orange);
+    }
+
+    /* ===========================
+       VERBATIM CARDS
+    =========================== */
+    .verbatim-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    @media (max-width: 780px) { .verbatim-grid { grid-template-columns: 1fr; } }
+
+    .verbatim-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+        border-left: 3px solid var(--orange);
+        position: relative;
+    }
+
+    .verbatim-card::before {
+        content: '\201C';
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        color: rgba(230,126,34,0.12);
+        position: absolute;
+        top: 0.2rem;
+        left: 0.75rem;
+        line-height: 1;
+    }
+
+    .verbatim-card p {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.65;
+        margin-bottom: 0.9rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .verbatim-meta {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--orange);
+    }
+
+    /* ===========================
+       INTEL ANALYSIS SECTION
+    =========================== */
+    .intel-compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        background: rgba(255,255,255,0.06);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin: 2rem 0;
+    }
+
+    @media (max-width: 720px) { .intel-compare { grid-template-columns: 1fr; } }
+
+    .intel-col {
+        background: rgba(255,255,255,0.03);
+        padding: 2rem 1.75rem;
+    }
+
+    .intel-col-head {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .intel-flag {
+        font-size: 1.5rem;
+    }
+
+    .intel-col-head h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        color: var(--white);
+    }
+
+    .intel-items {
+        list-style: none;
+        font-size: 0.845rem;
+        color: rgba(255,255,255,0.65);
+    }
+
+    .intel-items li {
+        padding: 0.4rem 0 0.4rem 1.25rem;
+        position: relative;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .intel-items li:last-child { border-bottom: none; }
+
+    .intel-items li::before {
+        content: '·';
+        position: absolute;
+        left: 0;
+        color: var(--orange);
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .intel-bridge {
+        background: rgba(230,126,34,0.08);
+        border: 1px solid rgba(230,126,34,0.18);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.75rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.75);
+        line-height: 1.65;
+    }
+
+    /* ===========================
+       SECTION: CONTEXTE (dark)
+    =========================== */
+    #contexte {}
+
+
+    .paradox {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        align-items: center;
+        background: rgba(230,126,34,0.07);
+        border: 1px solid rgba(230,126,34,0.18);
+        border-radius: var(--radius);
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .paradox-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 0.4rem;
+    }
+
+    .paradox-val {
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.9);
+    }
+
+    .paradox-sym {
+        font-size: 1.75rem;
+        color: var(--orange);
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* Stats row */
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1.25rem;
+        margin: 2.5rem 0;
+    }
+
+    .stat-box {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        padding: 1.25rem 1rem;
+        text-align: center;
+    }
+
+    .stat-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--orange);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+    }
+
+    .stat-lbl {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.5);
+        line-height: 1.4;
+    }
+
+    /* ===========================
+       SECTION: QUESTION
+    =========================== */
+    #question {}
+
+    .research-q {
+        background: var(--off-white);
+        border-left: 4px solid var(--orange);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 1.75rem 2rem;
+        margin: 2rem 0;
+    }
+
+    .research-q .q-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 0.6rem;
+    }
+
+    .research-q p {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+        color: var(--navy);
+        line-height: 1.55;
+        margin: 0;
+    }
+
+    .os-card {
+        background: var(--off-white);
+        border-radius: var(--radius);
+        padding: 1.5rem 1.75rem;
+        border-top: 3px solid var(--blue);
+    }
+
+    .os-tag {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 0.6rem;
+    }
+
+    .os-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        margin-bottom: 0.6rem;
+        color: var(--navy);
+    }
+
+    .os-card p {
+        font-size: 0.875rem;
+        color: var(--muted);
+    }
+
+    /* ===========================
+       SECTION: TERRAIN (dark)
+    =========================== */
+    #terrain {}
+
+    .terrain-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 1.25rem;
+        margin: 2.5rem 0;
+    }
+
+    .terrain-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        padding: 1.4rem;
+    }
+
+    .terrain-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .terrain-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.95rem;
+        color: var(--orange);
+        margin-bottom: 0.4rem;
+    }
+
+    .terrain-card p {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.55);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* ===========================
+       SECTION: MODÈLES (white)
+    =========================== */
+    #modeles {}
+
+    /* --- HOT TRIANGLE --- */
+    .hot-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin: 2rem 0 4rem;
+    }
+
+    @media (max-width: 780px) { .hot-wrap { grid-template-columns: 1fr; } }
+
+    .hot-svg-wrap { max-width: 380px; margin: 0 auto; }
+
+    .hot-dim {
+        border-left: 4px solid;
+        padding: 0.9rem 1.1rem;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        margin-bottom: 1rem;
+    }
+
+    .hot-dim.h { border-color: var(--orange); background: var(--orange-pale); }
+    .hot-dim.o { border-color: var(--blue);   background: var(--blue-pale); }
+    .hot-dim.t { border-color: var(--green);  background: var(--green-pale); }
+
+    .hot-dim h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .hot-dim.h h4 { color: var(--orange-dark); }
+    .hot-dim.o h4 { color: #1d4ed8; }
+    .hot-dim.t h4 { color: #047857; }
+
+    .hot-dim p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+    /* --- PYRAMID --- */
+    .pyramid-wrap {
+        max-width: 580px;
+        margin: 2.5rem auto;
+    }
+
+    .pyr-level {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .pyr-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7rem 1.1rem;
+        border-radius: 5px;
+        color: white;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: filter 0.2s, transform 0.15s;
+        user-select: none;
+    }
+
+    .pyr-bar:hover { filter: brightness(1.12); transform: scaleX(1.01); }
+
+    .pyr-sub { font-size: 0.68rem; font-weight: 400; opacity: 0.75; margin-left: 0.75rem; }
+
+    .pyr-level-5 .pyr-bar { background: #c0392b; width: 38%; }
+    .pyr-level-4 .pyr-bar { background: #e67e22; width: 54%; }
+    .pyr-level-3 .pyr-bar { background: #2980b9; width: 70%; }
+    .pyr-level-2 .pyr-bar { background: #1a5276; width: 86%; }
+    .pyr-level-1 .pyr-bar { background: #0d1f3c; width: 100%; border-radius: 0 0 8px 8px; }
+
+    .pyr-info {
+        display: none;
+        background: var(--navy);
+        color: rgba(255,255,255,0.85);
+        border-left: 3px solid var(--orange);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 1.1rem 1.5rem;
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.65;
+    }
+
+    .pyr-info.open { display: block; }
+
+    .pyr-info strong { color: var(--orange); }
+
+    .pyr-hint {
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 0.75rem;
+        font-style: italic;
+    }
+
+    /* ===========================
+       SECTION: FTT (dark)
+    =========================== */
+    #ftt {}
+
+    .ftt-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin: 2.5rem 0;
+    }
+
+    @media (max-width: 720px) { .ftt-grid { grid-template-columns: 1fr; } }
+
+    .ftt-step {
+        background: rgba(255,255,255,0.03);
+        padding: 2rem 1.6rem;
+        position: relative;
+    }
+
+    .ftt-letter {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: var(--orange);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+    }
+
+    .ftt-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.9rem;
+    }
+
+    .ftt-badge {
+        display: inline-block;
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--orange);
+        background: rgba(230,126,34,0.12);
+        border-radius: 20px;
+        padding: 0.2rem 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .ftt-items {
+        list-style: none;
+        font-size: 0.845rem;
+        color: rgba(255,255,255,0.65);
+    }
+
+    .ftt-items li {
+        padding: 0.25rem 0 0.25rem 1.25rem;
+        position: relative;
+    }
+
+    .ftt-items li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--orange);
+        opacity: 0.7;
+    }
+
+    .ftt-livrable {
+        margin-top: 1.25rem;
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.35);
+        font-style: italic;
+    }
+
+    .ftt-loop-note {
+        display: block;
+        font-size: 0.7rem;
+        color: rgba(230,126,34,0.7);
+        margin-top: 1rem;
+        padding: 0.3rem 0.7rem;
+        border: 1px solid rgba(230,126,34,0.2);
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .ftt-outcome {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .ftt-badge-big {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--orange);
+        color: white;
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        letter-spacing: 0.03em;
+    }
+
+    /* ===========================
+       SECTION: RÉSULTATS (grey)
+    =========================== */
+    #resultats {}
+
+    .findings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 1.4rem;
+        margin: 2.5rem 0;
+    }
+
+    .finding-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 1.6rem;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+        border-top: 3px solid;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .finding-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .finding-card.robust   { border-color: var(--orange); }
+    .finding-card.moderate { border-color: var(--blue); }
+    .finding-card.system   { border-color: var(--green); }
+
+    .ftag {
+        display: inline-block;
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        margin-bottom: 0.9rem;
+    }
+
+    .finding-card.robust   .ftag { background: var(--orange-pale); color: var(--orange-dark); }
+    .finding-card.moderate .ftag { background: var(--blue-pale);   color: #1d4ed8; }
+    .finding-card.system   .ftag { background: var(--green-pale);  color: #047857; }
+
+    .finding-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+    }
+
+    .finding-card p {
+        font-size: 0.845rem;
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .systemic-box {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 2rem 2.5rem;
+        text-align: center;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+        margin-top: 2rem;
+    }
+
+    .systemic-box .big-q {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--navy);
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+    }
+
+    .systemic-box .tag-line {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    /* ===========================
+       SECTION: CONTRIBUTIONS (white)
+    =========================== */
+    #contributions {}
+
+    .contrib-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 2.5rem 0;
+    }
+
+    @media (max-width: 780px) { .contrib-grid { grid-template-columns: 1fr; } }
+
+    .contrib-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        border-radius: var(--radius);
+        background: var(--off-white);
+        transition: transform 0.2s;
+    }
+
+    .contrib-card:hover { transform: translateY(-3px); }
+
+    .contrib-icon {
+        width: 60px; height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .contrib-card:nth-child(1) .contrib-icon { background: var(--orange-pale); }
+    .contrib-card:nth-child(2) .contrib-icon { background: var(--blue-pale); }
+    .contrib-card:nth-child(3) .contrib-icon { background: var(--green-pale); }
+
+    .contrib-card h3 {
+        font-size: 1.1rem;
+        color: var(--navy);
+        margin-bottom: 0.9rem;
+    }
+
+    .contrib-card p {
+        font-size: 0.845rem;
+        color: var(--muted);
+    }
+
+    .perspectives-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .persp-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.2rem;
+    }
+
+    .persp-card .num {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--orange);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .persp-card h5 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 0.4rem;
+    }
+
+    .persp-card p {
+        font-size: 0.775rem;
+        color: var(--muted);
+        margin: 0;
+    }
+
+    /* ===========================
+       SECTION: CONCLUSION (dark)
+    =========================== */
+    #conclusion {}
+
+    .concl-center {
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .concl-big {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.35rem, 2.8vw, 2rem);
+        color: var(--white);
+        line-height: 1.35;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .concl-accent { color: var(--orange); }
+
+    .concl-final {
+        background: rgba(230,126,34,0.1);
+        border: 1px solid rgba(230,126,34,0.22);
+        border-radius: var(--radius);
+        padding: 1.75rem 2.5rem;
+        margin-top: 2.5rem;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--white);
+        line-height: 1.4;
+    }
+
+    /* ===========================
+       SECTION: ACCÈS (grey)
+    =========================== */
+    #acces {}
+
+    .access-grid {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 4rem;
+        align-items: start;
+    }
+
+    @media (max-width: 780px) { .access-grid { grid-template-columns: 1fr; } }
+
+    .access-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.85rem 1.6rem;
+        border-radius: 7px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-decoration: none;
+        transition: all 0.2s;
+        margin: 0.4rem 0.4rem 0.4rem 0;
+    }
+
+    .btn-primary { background: var(--orange); color: white; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    .btn-secondary { background: var(--navy); color: white; }
+    .btn-secondary:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+    .btn-ghost {
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+    .cite-box {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.4rem;
+        margin-top: 1.5rem;
+    }
+
+    .cite-box .cite-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+    }
+
+    .cite-box p {
+        font-size: 0.8rem;
+        font-family: 'Courier New', monospace;
+        color: var(--text);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .bio-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    }
+
+    .bio-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+    }
+
+    .bio-card p {
+        font-size: 0.845rem;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+    }
+
+    .bio-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--orange);
+        text-decoration: none;
+        font-size: 0.845rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .bio-link:hover { color: var(--orange-dark); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+        background: #07131f;
+        color: rgba(255,255,255,0.3);
+        text-align: center;
+        padding: 1.75rem;
+        font-size: 0.78rem;
+    }
+    </style>
 </head>
 <body>
 
-<span class="eyebrow">Thèse de doctorat · Sciences de l'Information et de la Communication · Université de Poitiers · CEREGE</span>
+<!-- ========== NAVIGATION ========== -->
+<nav>
+    <a href="#hero" class="nav-brand">C. Deschamps <span>&bull;</span> Thèse 2025</a>
+    <ul class="nav-links">
+        <li><a href="#contexte">Contexte</a></li>
+        <li><a href="#question">Question</a></li>
+        <li><a href="#terrain">Terrain</a></li>
+        <li><a href="#modeles">Modèles</a></li>
+        <li><a href="#resultats">Résultats</a></li>
+        <li><a href="#acces">Accès</a></li>
+    </ul>
+</nav>
 
-<h1>La phase d'analyse dans le cycle de la veille stratégique</h1>
-<p style="font-size:0.85rem;color:rgba(255,255,255,0.35);margin-bottom:0.3rem;font-style:italic;">Conditions d'une mise en œuvre pertinente dans le cadre d'organisations françaises</p>
+<!-- ========== HERO ========== -->
+<section id="hero">
+    <div class="hero-inner">
+        <div class="hero-eyebrow">Thèse de doctorat &nbsp;·&nbsp; Sciences de l'Information et de la Communication</div>
+        <h1 class="hero-title">La phase d'analyse dans le cycle de la veille stratégique</h1>
+        <p class="hero-subtitle">Conditions d'une mise en œuvre pertinente dans les organisations françaises</p>
+        <p class="hero-meta">
+            <strong>Christophe Deschamps</strong><br>
+            Sous la direction du Professeur Nicolas Moinet<br>
+            CEREGE &nbsp;·&nbsp; Université de Poitiers &nbsp;·&nbsp; Décembre 2025
+        </p>
+        <a class="hero-scroll" href="#contexte" aria-label="Faire défiler vers le contenu">
+            Découvrir
+            <div class="scroll-arrow"></div>
+        </a>
+    </div>
+</section>
 
-<div class="rule"></div>
+<!-- ========== CONTEXTE ========== -->
+<section id="contexte" class="dark">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Contexte</span>
+            <h2 class="section-title">La Bibliothèque de Babel, version numérique</h2>
+            <div class="rule"></div>
+        </div>
 
-<p class="sub">
-    <strong>Christophe Deschamps</strong><br>
-    Sous la direction du Professeur Nicolas Moinet<br>
-    Décembre 2025 · 561 pages
-</p>
+        <div class="two-col">
+            <div class="reveal">
+                <p>Dans la nouvelle de Borges, la Bibliothèque de Babel contient tous les livres possibles : combinaisons infinies de 25 caractères. Ses bibliothécaires errent toute leur vie dans ce labyrinthe à la recherche de sens. Les livres signifiants existent, mais où les trouver ?</p>
 
-<a href="these-deschamps-2025.pdf" class="btn" download>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    Télécharger le manuscrit (PDF)
-</a>
-<a href="https://hal.science/tel-05590732" class="btn" target="_blank" rel="noopener" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);margin-left:0.5rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    Consulter sur HAL
-</a>
+                <p>Les organisations d'aujourd'hui évoluent dans cette bibliothèque. Elles accumulent des données, déploient des outils de collecte de plus en plus sophistiqués, aspirent des flux d'information en continu. Et pourtant, un paradoxe persiste.</p>
 
-<p class="coming-soon">
-    <span>Présentation complète à venir</span><br>
-    Résultats, modèle H-O-T, protocole F-T-T, verbatims d'analystes —<br>une page de présentation détaillée sera disponible prochainement.
-</p>
+                <blockquote>
+                    Voir n'est pas savoir, information n'est pas connaissance. L'accumulation et le stockage de données ne font pas le savoir.
+                    <cite>Philippe Baumard</cite>
+                </blockquote>
 
-<footer>© 2025 Christophe Deschamps &nbsp;·&nbsp; Université de Poitiers</footer>
+                <blockquote>
+                    L'information est avant tout un principe d'économie. Moins nombreuses seront les données nécessaires, meilleure sera l'information. Un surplus d'informations amène l'arrêt de toute information. Ce n'est plus un enrichissement mais un appauvrissement.
+                    <cite>Peter Drucker</cite>
+                </blockquote>
 
+                <p style="font-size:0.9rem;">Le risque : la <em>paralysie par l'analyse</em> (accumuler sans jamais conclure) ou, pire encore, l'<em>ignorance savante</em> : croire savoir parce qu'on a beaucoup de données. Disposer d'un savoir potentiel. Potentiel seulement.</p>
+            </div>
+
+            <div class="reveal delay-1">
+                <!-- Animated info-overload viz -->
+
+                <div class="paradox">
+                    <div>
+                        <div class="paradox-label">Investissement massif</div>
+                        <div class="paradox-val">Collecte &amp; outils de veille</div>
+                    </div>
+                    <div class="paradox-sym">&#8800;</div>
+                    <div>
+                        <div class="paradox-label">Résultat attendu</div>
+                        <div class="paradox-val">Connaissance actionnable</div>
+                    </div>
+                </div>
+
+                <p style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:1rem; line-height:1.6;">Le cycle du renseignement place l'analyse au cœur du dispositif, ce « cœur du réacteur ». Dans la réalité des organisations, ce cœur ressemble davantage à une <strong style="color:rgba(255,255,255,0.7);">boîte noire</strong>.</p>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top:3rem;">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Un angle mort persistant dans la littérature</h3>
+            <blockquote>
+                J'ai observé, de manière récurrente, un écart entre le discours, où l'analyse est présentée comme le « cœur du réacteur » du cycle du renseignement, et la réalité des moyens déployés, où elle reste souvent le parent pauvre.
+                <cite>Christophe Deschamps</cite>
+            </blockquote>
+            <p>Vingt-cinq ans de pratique professionnelle en veille stratégique et intelligence économique confirment ce que la recherche académique peine à nommer. La littérature parle d'analyse, mais décrit peu son fonctionnement réel ; elle ne distingue souvent pas l'analyse de l'ensemble de la phase d'exploitation.</p>
+
+            <div class="stats-row">
+                <div class="stat-box reveal delay-1">
+                    <div class="stat-num">36%</div>
+                    <div class="stat-lbl">des ouvrages confondent "analyse" et "exploitation" dans leur terminologie</div>
+                </div>
+                <div class="stat-box reveal delay-2">
+                    <div class="stat-num">70</div>
+                    <div class="stat-lbl">ouvrages de veille et d'IE analysés pour cartographier cet impensé</div>
+                </div>
+                <div class="stat-box reveal delay-3">
+                    <div class="stat-num">30</div>
+                    <div class="stat-lbl">thèses françaises dépouillées</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== QUESTION ========== -->
+<section id="question">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Question de recherche</span>
+            <h2 class="section-title">Quels leviers pour une analyse efficace ?</h2>
+            <div class="rule"></div>
+        </div>
+
+        <div class="reveal">
+            <p>La question centrale émerge du décalage entre discours et pratique : comment identifier et activer les leviers (humains, organisationnels et technologiques) qui favorisent une analyse efficace dans les organisations françaises ?</p>
+        </div>
+
+        <div class="research-q reveal">
+            <div class="q-label">Objectif général</div>
+            <p>Quels sont, dans les organisations françaises, les facteurs <strong>H</strong>umains, <strong>O</strong>rganisationnels et <strong>T</strong>echnologiques (H-O-T) qui favorisent une analyse de l'information efficace, susceptible de transformer la surabondance informationnelle en atout décisionnel ?</p>
+        </div>
+
+        <div class="two-col reveal">
+            <div class="os-card">
+                <div class="os-tag">Objectif spécifique 1</div>
+                <h4>Comprendre les leviers de performance</h4>
+                <p>Quels leviers H-O-T conditionnent l'efficience de la chaîne analytique ? Identifier les compétences, dynamiques collaboratives, outils et structures de gouvernance qui font la différence sur le terrain.</p>
+            </div>
+            <div class="os-card">
+                <div class="os-tag">Objectif spécifique 2</div>
+                <h4>Proposer un protocole opérationnel</h4>
+                <p>Comment un protocole abductif peut-il aider les analystes à formuler et sélectionner des hypothèses pertinentes dans un contexte VUCA (volatile, incertain, complexe, ambigu) ?</p>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2.5rem;">
+            <h3 style="font-size:1.3rem; margin-bottom:1rem;">Un ancrage épistémologique innovant</h3>
+            <p>La posture adoptée est celle du <strong>pragmatisme philosophique</strong> (Peirce, James, Dewey). Mobiliser le pragmatisme pour penser l'analyse du renseignement n'est pas un choix anodin : c'est affirmer que la valeur d'une connaissance se mesure à ses conséquences pratiques, à sa capacité à éclairer l'action. Pas à son élégance théorique.</p>
+
+            <div class="epist-grid reveal">
+                <div class="epist-card">
+                    <div class="epist-num">1</div>
+                    <h4>Pragmatisme</h4>
+                    <p>La vérité n'est pas un état, c'est un processus. « Posséder des pensées vraies, c'est posséder de précieux instruments pour l'action. » Une analyse est vraie si elle donne prise sur le réel.</p>
+                    <div class="epist-author">William James</div>
+                </div>
+                <div class="epist-card">
+                    <div class="epist-num">2</div>
+                    <h4>Faillibilisme</h4>
+                    <p>Toute conclusion reste provisoire et révisable. « L'expérience a une façon à elle de bouillonner par-dessus bord et de nous contraindre à rectifier nos formules présentes. » L'analyste qui ne doute pas est dangereux.</p>
+                    <div class="epist-author">William James</div>
+                </div>
+                <div class="epist-card">
+                    <div class="epist-num">3</div>
+                    <h4>Abduction</h4>
+                    <p>Ni déduction (du général au particulier), ni induction (du particulier au général) : l'abduction part d'un <em>étonnement</em>, d'une anomalie, pour remonter vers l'hypothèse la plus éclairante. C'est la logique de Sherlock Holmes. C'est la logique de l'analyste.</p>
+                    <div class="epist-author">Charles Sanders Peirce</div>
+                </div>
+            </div>
+
+            <blockquote class="reveal" style="margin-top:2rem;">
+                L'esprit scientifique se constitue sur un ensemble d'erreurs rectifiées.
+                <cite>Gaston Bachelard</cite>
+            </blockquote>
+
+            <p class="reveal" style="margin-top:1.25rem;">Ce triptyque pragmatiste constitue un ancrage innovant pour l'<em>intelligence analysis</em> : il offre une épistémologie du renseignement orientée vers l'action, qui échappe à la fois au positivisme naïf (l'accumulation de données suffit) et au relativisme stérile (toute interprétation se vaut). La connaissance produite par l'analyste n'est ni objectivité pure ni subjectivité assumée : c'est une hypothèse défendable, testée, tracée.</p>
+
+            <div class="hygiene-box reveal" style="margin-top:2rem;border-left:4px solid var(--orange);background:var(--orange-pale);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
+                <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:0.5rem;">Concept clé</div>
+                <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:var(--navy);margin:0 0 0.5rem;">Hygiène de l'analyste</h4>
+                <p style="margin:0;color:#374151;font-size:0.92rem;">L'ensemble des pratiques intellectuelles qui maintiennent la rigueur du raisonnement analytique : formuler explicitement ses hypothèses, les tester par falsification, tracer les étapes du raisonnement, reconnaître ses biais. Ni recette, ni procédure : une discipline épistémique incarnée, exercée dans la durée.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TERRAIN ========== -->
+<section id="terrain" class="dark">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">L'enquête</span>
+            <h2 class="section-title">Vingt analystes, six secteurs, des entretiens approfondis</h2>
+            <div class="rule"></div>
+        </div>
+
+        <p class="reveal">L'enquête qualitative constitue le cœur empirique de la thèse. Vingt entretiens semi-directifs conduits auprès d'analystes professionnels français, codés et analysés avec Atlas.ti selon une double approche déductive (modèle H-O-T) et inductive (thèmes émergents).</p>
+
+        <div class="terrain-grid reveal">
+            <div class="terrain-card">
+                <div class="terrain-icon">🎯</div>
+                <h4>Critères de sélection</h4>
+                <p>50 % minimum du temps consacré à l'analyse · Usage d'outils de collecte · Organisation basée en France</p>
+            </div>
+            <div class="terrain-card">
+                <div class="terrain-icon">👥</div>
+                <h4>Profil du panel</h4>
+                <p>15 hommes, 5 femmes · 65 % entre 45 et 59 ans · 14 participants avec +20 ans de pratique · 1 professionnel basé au Québec</p>
+            </div>
+            <div class="terrain-card">
+                <div class="terrain-icon">🏢</div>
+                <h4>Diversité sectorielle</h4>
+                <p>Défense · Conseil · Énergie · Banque · Industrie · Luxe, dont 2 anciens analystes des services de renseignement français</p>
+            </div>
+            <div class="terrain-card">
+                <div class="terrain-icon">🔬</div>
+                <h4>Analyse des données</h4>
+                <p>Codage avec Atlas.ti · 13 indicateurs spécifiques · Analyse de cooccurrences · Deux types de codage : longitudinal et ciblé</p>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <blockquote>
+                Ces analystes ont traversé plusieurs générations d'outils et de pratiques. Ils ont du recul. Ce n'est pas un biais méthodologique : c'est un atout.
+                <cite>Christophe Deschamps</cite>
+            </blockquote>
+        </div>
+
+        <div class="reveal">
+            <p>L'état de l'art mobilise cinq corpus distincts : les pionniers de la veille stratégique, le courant <em>Environmental scanning</em>, l'école française d'intelligence économique, les travaux sur la transformation donnée vers connaissance actionnable, et les <em>Intelligence Studies</em> anglo-saxonnes. Un travail nécessaire pour cartographier un objet fragmenté entre plusieurs traditions intellectuelles et académiques.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:3rem;">
+            <h3 style="font-size:1.35rem; color:var(--white); margin-bottom:0.6rem;">Intelligence analysis : un angle mort français face à un corpus anglo-saxon structuré</h3>
+            <div class="rule"></div>
+            <p style="color:rgba(255,255,255,0.72);">L'un des constats les plus frappants de l'état de l'art est l'asymétrie radicale entre les deux traditions. D'un côté, un corpus anglo-saxon dense, formalisé, transmis depuis soixante-dix ans. De l'autre, un déficit français persistant sur la question spécifique de l'analyse, malgré une école de veille stratégique et d'intelligence économique bien établie.</p>
+
+            <div class="intel-compare">
+                <div class="intel-col">
+                    <div class="intel-col-head">
+                        <div class="intel-flag">🇫🇷</div>
+                        <h4>École française : la collecte au premier plan</h4>
+                    </div>
+                    <ul class="intel-items">
+                        <li>Tradition riche en veille stratégique et IE (Rapport Martre, 1994), mais centrée sur les dispositifs de collecte</li>
+                        <li>L'analyse est présentée comme centrale (le « cœur du réacteur »), mais reste peu théorisée et peu enseignée</li>
+                        <li>Confusion terminologique persistante : 36 % des ouvrages utilisent « analyse » pour désigner l'ensemble de la phase d'exploitation</li>
+                        <li>37 terminologies différentes pour la seule notion de surveillance de l'environnement (Lesca &amp; Caron-Fasan)</li>
+                        <li>Renseignement longtemps marginal en milieu académique, perçu comme relevant de la clandestinité</li>
+                        <li>Un seul ouvrage en français presque entièrement dédié à l'analyse : Bulinge (2022)</li>
+                    </ul>
+                </div>
+                <div class="intel-col">
+                    <div class="intel-col-head">
+                        <div class="intel-flag">🇺🇸</div>
+                        <h4>École américaine : une doctrine formalisée</h4>
+                    </div>
+                    <ul class="intel-items">
+                        <li>Sherman Kent pose dès 1949 les fondements de l'<em>intelligence analysis</em> comme discipline (<em>Strategic Intelligence for American World Policy</em>)</li>
+                        <li>Richards J. Heuer (CIA) publie en 1999 <em>Psychology of Intelligence Analysis</em>, manuel de référence mondial sur les biais et les méthodes structurées</li>
+                        <li>Corpus de Structured Analytic Techniques (SATs) : ACH, Red Teaming, hypothèses concurrentes, Devil's Advocacy</li>
+                        <li>Heuer, Pherson, Kahneman, Klein : la psychologie cognitive appliquée à l'analyse, enseignée systématiquement</li>
+                        <li>Formation formalisée dans les agences (CIA, DIA, NSA) et les universités depuis les années 1960</li>
+                        <li>Une culture du raisonnement opposable, traçable, évaluable — inexistante en France à cette échelle</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="intel-bridge">
+                <strong style="color:var(--orange);">Ce que la thèse apporte :</strong> elle tente de contribuer à combler ce déficit, en proposant un cadre de compréhension (modèle H-O-T) et un protocole opérationnel (F-T-T) ancrés dans les pratiques réelles d'analystes français, nourris des apports méthodologiques anglo-saxons. Non pas un simple transfert, mais une tentative d'adaptation au contexte organisationnel et culturel français.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MODÈLES ========== -->
+<section id="modeles">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Les modèles</span>
+            <h2 class="section-title">Trois outils conceptuels et opérationnels</h2>
+            <div class="rule"></div>
+        </div>
+
+        <!-- HOT TRIANGLE -->
+        <h3 class="reveal" style="font-size:1.35rem; margin-bottom:0.5rem;">Le modèle H-O-T : un triangle équilatéral</h3>
+
+        <blockquote class="reveal">
+            La vérité, ce n'est point ce qui se démontre, c'est ce qui simplifie.
+            <cite>Antoine de Saint-Exupéry</cite>
+        </blockquote>
+
+        <p class="reveal">La performance analytique repose sur trois dimensions interdépendantes. Si l'on déforme un angle, on brise l'harmonie de l'ensemble : des outils sophistiqués sans accompagnement humain produisent des outils sous-exploités ; des processus sans compétences ni bons outils créent une lourdeur bureaucratique ; une formation sans adaptation organisationnelle reste un savoir-faire inexploitable.</p>
+
+        <p class="reveal" style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem;">Cliquez sur chaque sommet pour explorer la dimension.</p>
+
+        <div class="hot-interactive reveal">
+            <div class="hot-svg-container">
+                <svg id="hotSvg" viewBox="-40 -40 500 460" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="tGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f0f4ff"/>
+                            <stop offset="100%" stop-color="#e8eef8"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Background triangle -->
+                    <polygon id="triBase" points="210,30 398,348 22,348" fill="url(#tGrad2)" stroke="#dde3f0" stroke-width="1.5"/>
+                    <!-- Center zone -->
+                    <ellipse cx="210" cy="220" rx="52" ry="38" fill="white" stroke="#dde3f0" stroke-width="1"/>
+                    <text x="210" y="214" text-anchor="middle" fill="#0d1f3c" font-family="Playfair Display,Georgia,serif" font-size="11" font-weight="700">Performance</text>
+                    <text x="210" y="230" text-anchor="middle" fill="#6b7280" font-family="Inter,Arial,sans-serif" font-size="9">analytique</text>
+                    <!-- Edge labels -->
+                    <text x="128" y="196" text-anchor="middle" fill="#9ca3af" font-family="Inter,Arial,sans-serif" font-size="8.5" transform="rotate(-60,128,196)">Compétences · Cognition</text>
+                    <text x="292" y="196" text-anchor="middle" fill="#9ca3af" font-family="Inter,Arial,sans-serif" font-size="8.5" transform="rotate(60,292,196)">Gouvernance · Collab.</text>
+                    <text x="210" y="336" text-anchor="middle" fill="#9ca3af" font-family="Inter,Arial,sans-serif" font-size="8.5">Outils · IA · Capitalisation</text>
+                    <!-- H vertex -->
+                    <circle id="vtxH" cx="210" cy="30" r="34" fill="#e67e22" stroke="white" stroke-width="2.5" class="hot-vtx" style="cursor:pointer" onclick="hotClick('H')"/>
+                    <text x="210" y="37" text-anchor="middle" fill="white" font-family="Playfair Display,Georgia,serif" font-size="22" font-weight="700" style="pointer-events:none">H</text>
+                    <text x="210" y="76" text-anchor="middle" fill="#e67e22" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" style="pointer-events:none">Humain</text>
+                    <!-- O vertex -->
+                    <circle id="vtxO" cx="398" cy="348" r="34" fill="#2563eb" stroke="white" stroke-width="2.5" class="hot-vtx" style="cursor:pointer" onclick="hotClick('O')"/>
+                    <text x="398" y="355" text-anchor="middle" fill="white" font-family="Playfair Display,Georgia,serif" font-size="22" font-weight="700" style="pointer-events:none">O</text>
+                    <text x="358" y="336" text-anchor="middle" fill="#2563eb" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="700" style="pointer-events:none">Organ.</text>
+                    <!-- T vertex -->
+                    <circle id="vtxT" cx="22" cy="348" r="34" fill="#059669" stroke="white" stroke-width="2.5" class="hot-vtx" style="cursor:pointer" onclick="hotClick('T')"/>
+                    <text x="22" y="355" text-anchor="middle" fill="white" font-family="Playfair Display,Georgia,serif" font-size="22" font-weight="700" style="pointer-events:none">T</text>
+                    <text x="62" y="336" text-anchor="middle" fill="#059669" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="700" style="pointer-events:none">Techno.</text>
+                </svg>
+            </div>
+            <div class="hot-panel" id="hotPanel">
+                <div class="hot-panel-default">
+                    <p>Le modèle H-O-T est un <strong>triangle équilatéral</strong> : si l'on déforme un angle, on brise l'harmonie de l'ensemble.</p>
+                    <p style="font-size:0.82rem;color:var(--muted);margin-top:0.5rem;">Cliquez sur H, O ou T pour explorer chaque dimension.</p>
+                </div>
+                <div class="hot-panel-content" id="hotPanelH" style="display:none">
+                    <div class="hot-panel-tag" style="background:var(--orange-pale);color:var(--orange-dark);">Humain</div>
+                    <h4>La dimension H</h4>
+                    <p>C'est la dimension la plus déterminante et la moins formalisée. Elle regroupe tout ce que l'analyste mobilise en tant qu'individu.</p>
+                    <ul class="hot-list">
+                        <li><strong>Cadrage des besoins</strong> : savoir délimiter le périmètre d'une demande avant de collecter</li>
+                        <li><strong>Esprit critique</strong> : questionner ses sources, résister à la confirmation bias</li>
+                        <li><strong>Formulation d'hypothèses</strong> : le levier le moins bien partagé selon l'enquête, et le plus décisif</li>
+                        <li><strong>Mise en récit</strong> : transformer une analyse en livrable compréhensible pour le décideur</li>
+                        <li><strong>Gestion des biais cognitifs</strong> : ancrage, disponibilité, biais de confirmation (Kahneman, Heuer)</li>
+                    </ul>
+                    <div class="hot-ref">Simon (rationalité limitée) · Kahneman (Système 1/2) · Heuer (biais analytiques) · Snowden (sensemaking)</div>
+                </div>
+                <div class="hot-panel-content" id="hotPanelO" style="display:none">
+                    <div class="hot-panel-tag" style="background:var(--blue-pale);color:#1d4ed8;">Organisationnel</div>
+                    <h4>La dimension O</h4>
+                    <p>L'analyste ne travaille jamais seul. La dimension organisationnelle structure le cadre dans lequel son travail prend (ou ne prend pas) de valeur.</p>
+                    <ul class="hot-list">
+                        <li><strong>Gouvernance analytique</strong> : qui commande quoi, à qui, avec quels délais et garde-fous</li>
+                        <li><strong>Collaboration structurée</strong> : revues d'hypothèses entre pairs, confrontations argumentées</li>
+                        <li><strong>Capitalisation</strong> : conservation et réutilisation des analyses produites (mémoire organisationnelle)</li>
+                        <li><strong>Boucle de feedback</strong> : le levier le plus absent — l'analyste ne sait presque jamais si son travail a eu un impact</li>
+                        <li><strong>Intelligence organisationnelle</strong> : la capacité collective à transformer l'information en décision</li>
+                    </ul>
+                    <div class="hot-ref">Wilensky (intelligence org.) · Aguilar (scanning) · Ansoff (signaux faibles) · Porter (analyse concurrentielle)</div>
+                </div>
+                <div class="hot-panel-content" id="hotPanelT" style="display:none">
+                    <div class="hot-panel-tag" style="background:var(--green-pale);color:#047857;">Technologique</div>
+                    <h4>La dimension T</h4>
+                    <p>Les outils amplifient le raisonnement, à condition de ne pas se substituer à l'analyste. C'est la dimension qui évolue le plus vite, notamment sous l'effet de l'IA générative.</p>
+                    <ul class="hot-list">
+                        <li><strong>Outils d'aide à l'analyse</strong> : timelines, cartographies conceptuelles, matrices ACH, outils de visualisation</li>
+                        <li><strong>Plateformes de veille</strong> : collecte et tri automatisés (Inoreader, Feedly, outils spécialisés)</li>
+                        <li><strong>Capitalisation numérique</strong> : PKM, bases de connaissances, GED</li>
+                        <li><strong>IA générative</strong> : potentiel comme assistant à la formulation d'hypothèses et au test de falsification — à piloter avec méthode</li>
+                        <li><strong>Traçabilité</strong> : versionnage, archivage des raisonnements intermédiaires</li>
+                    </ul>
+                    <div class="hot-ref">Luhn (automatisation) · Kent (rigueur méthodologique) · Pherson (techniques structurées)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PYRAMID -->
+        <h3 class="reveal" style="font-size:1.35rem; margin-bottom:0.5rem; margin-top:1rem;">La Pyramide de performance analytique</h3>
+        <div class="reveal" style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;padding:0.75rem 1rem;background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;">
+            <span style="font-size:1.6rem;line-height:1;">↑</span>
+            <div>
+                <strong style="color:var(--orange-dark);font-size:0.95rem;">Se lit de bas en haut</strong>
+                <span style="color:#374151;font-size:0.88rem;"> — chaque niveau repose sur le précédent. Les fondations conditionnent tout le reste.</span>
+                <span style="display:block;font-size:0.8rem;font-style:italic;color:var(--muted);margin-top:0.2rem;">Cliquez sur un niveau pour en voir les détails.</span>
+            </div>
+        </div>
+
+        <div class="pyramid-wrap reveal">
+            <div class="pyr-level pyr-level-5">
+                <div class="pyr-bar" onclick="togglePyr(5)">⚡ PERFORMANCE ANALYTIQUE</div>
+            </div>
+            <div class="pyr-level pyr-level-4">
+                <div class="pyr-bar" onclick="togglePyr(4)">
+                    DIMENSIONS D'IMPACT <span class="pyr-sub">Fluidité · Valeur · Qualité</span>
+                </div>
+            </div>
+            <div class="pyr-level pyr-level-3">
+                <div class="pyr-bar" onclick="togglePyr(3)">
+                    LEVIERS MODÉRÉS <span class="pyr-sub">Gouvernance · Capitalisation</span>
+                </div>
+            </div>
+            <div class="pyr-level pyr-level-2">
+                <div class="pyr-bar" onclick="togglePyr(2)">
+                    LEVIERS ROBUSTES <span class="pyr-sub">Compétences · Collaboration · Tech</span>
+                </div>
+            </div>
+            <div class="pyr-level pyr-level-1">
+                <div class="pyr-bar" onclick="togglePyr(1)">
+                    FONDATIONS H-O-T <span class="pyr-sub">Humain · Organisationnel · Technologique</span>
+                </div>
+            </div>
+            <div id="pyrInfo" class="pyr-info"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FTT PROTOCOLE ========== -->
+<section id="ftt" class="dark">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Le protocole</span>
+            <h2 class="section-title">F-T-T : Formuler · Tester · Tracer</h2>
+            <div class="rule"></div>
+        </div>
+
+        <blockquote class="reveal" style="max-width:680px; margin:0 auto 1.75rem;">
+            L'analyse est le processus par lequel les analystes transforment des informations brutes en renseignements utiles à la prise de décision. Elle est difficile, souvent imparfaite, et toujours nécessaire.
+            <cite>Richards J. Heuer Jr., <em>Psychology of Intelligence Analysis</em>, 1999</cite>
+        </blockquote>
+
+        <p class="reveal" style="max-width:680px;">Un protocole exploratoire, né des pratiques observées chez 8 analystes sur 20 qui présentaient une logique abductive structurée. Pas une recette mais un fil conducteur permettant de passer de l'étonnement initial à la décision finale, en rendant le raisonnement traçable et opposable.</p>
+
+        <div class="ftt-grid reveal">
+            <!-- F -->
+            <div class="ftt-step">
+                <div class="ftt-letter">F</div>
+                <div class="ftt-name">Formuler</div>
+                <div class="ftt-badge">Abduction · Peirce</div>
+                <ul class="ftt-items">
+                    <li>Énoncer ≥ 2 hypothèses + 1 contre-hypothèse crédible</li>
+                    <li>Identifier les signaux attendus si l'hypothèse est solide</li>
+                    <li>Repérer les biais possibles et les lacunes de sources</li>
+                </ul>
+                <div class="ftt-livrable">Livrable : brief de cadrage hypothèses/signaux/risques</div>
+            </div>
+
+            <!-- T1 -->
+            <div class="ftt-step">
+                <div class="ftt-letter">T</div>
+                <div class="ftt-name">Tester</div>
+                <div class="ftt-badge">Enquête · Dewey</div>
+                <ul class="ftt-items">
+                    <li>Posture de falsification : chercher ce qui peut infirmer</li>
+                    <li>Indépendance des sources (≥ 2 de nature différente, lorsque c'est possible)</li>
+                    <li>Définir le seuil d'acceptation : ce qui est "good enough"</li>
+                </ul>
+                <div class="ftt-livrable">Livrable : tableau preuves/contre-preuves par hypothèse</div>
+                <span class="ftt-loop-note">⟲ boucle de reformulation si l'hypothèse est invalidée</span>
+            </div>
+
+            <!-- T2 -->
+            <div class="ftt-step">
+                <div class="ftt-letter">T</div>
+                <div class="ftt-name">Tracer</div>
+                <div class="ftt-badge">Vérité-fonction · James</div>
+                <ul class="ftt-items">
+                    <li>Rendre le raisonnement opposable et traçable</li>
+                    <li>Pédagogie du cheminement : de l'étonnement à la conclusion</li>
+                    <li>Conserver sources clés, arbitrages, zones d'incertitude</li>
+                </ul>
+                <div class="ftt-livrable">Livrable : parcours d'analyse documenté</div>
+            </div>
+        </div>
+
+        <div class="ftt-outcome reveal">
+            <div class="ftt-badge-big">
+                → Décision éclairée &nbsp;·&nbsp; Action assumée
+            </div>
+            <p style="margin-top:1.25rem;font-size:0.845rem;color:rgba(255,255,255,0.45);max-width:580px;margin-left:auto;margin-right:auto;text-align:center;">Ce protocole ne prétend pas éliminer l'incertitude (ce serait illusoire). Il vise à la rendre un minimum gérable et traçable. L'analyste peut dire : « Voici mes hypothèses, voici comment je les ai testées, voici pourquoi j'ai retenu celle-ci. » C'est cette transparence qui fonde la confiance du décideur.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== RÉSULTATS ========== -->
+<section id="resultats" class="grey">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Résultats</span>
+            <h2 class="section-title">Ce que dit le terrain</h2>
+            <div class="rule"></div>
+        </div>
+
+        <p class="reveal">Vingt entretiens, codés avec Atlas.ti selon 13 indicateurs spécifiques. Les leviers identifiés ne produisent d'effets que dans leur interaction : c'est le résultat central.</p>
+
+        <details class="reveal" style="margin-bottom:1.5rem;border:1px solid #dde3f0;border-radius:8px;overflow:hidden;">
+            <summary style="padding:0.75rem 1.1rem;cursor:pointer;font-weight:600;font-size:0.88rem;color:var(--navy);background:#f0f4ff;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+                <span>🔍</span> Comment ces leviers ont-ils été identifiés et qualifiés ?
+            </summary>
+            <div style="padding:1rem 1.25rem;background:white;border-top:1px solid #dde3f0;font-size:0.875rem;color:#374151;line-height:1.65;">
+                <p style="margin:0 0 0.75rem;">Chaque entretien a été intégralement codé dans Atlas.ti selon un double protocole : déductif (grille H-O-T, appliquée a priori) et inductif (thèmes émergents non anticipés). Les 13 indicateurs couvrent la fréquence de mobilisation des pratiques, leur inscription dans la routine, leur lien perçu avec la qualité du livrable final.</p>
+                <p style="margin:0 0 0.5rem;"><strong>Un levier est dit « robuste »</strong> lorsque deux conditions sont simultanément réunies : (1) il est cité comme facteur d'impact par au moins 70 % du panel, de façon convergente entre secteurs ; (2) ses codes cooccurrent significativement avec les indicateurs de performance analytique dans l'analyse Atlas.ti.</p>
+                <p style="margin:0 0 0.5rem;"><strong>Un levier est dit « modéré »</strong> quand son efficacité est contextuelle : il produit des effets mesurables dans certaines configurations organisationnelles (grande structure, forte maturité analytique), mais pas dans d'autres.</p>
+                <p style="margin:0;"><strong>La catégorie « résultat systémique »</strong> désigne non un levier d'action, mais une condition structurelle qui conditionne tous les autres. L'absence de boucle de feedback en est l'exemple le plus frappant : ce n'est pas un outil à déployer, c'est un manque qui neutralise l'effet de tous les leviers présents.</p>
+            </div>
+        </details>
+
+        <div class="findings-grid">
+            <div class="finding-card robust reveal" onclick="toggleLevier(this)">
+                <div class="ftag">Levier robuste</div>
+                <h4>Compétences analytiques</h4>
+                <p>Cadrage des besoins, esprit critique, maîtrise lexicale, mise en récit. La compétence de formulation d'hypothèses est la moins bien partagée, et la plus décisive.</p>
+                <div class="fdetail">L'enquête montre que la capacité à formuler des hypothèses concurrentes avant de collecter est quasi absente des pratiques françaises. La plupart des analystes décrivent un processus inverse : collecter d'abord, puis trouver une explication. Cette inversion crée un biais de confirmation systématique. La dimension H inclut aussi la gestion des biais cognitifs (ancrage, disponibilité) et la maîtrise lexicale du domaine analysé, condition d'une lecture critique des sources.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+            <div class="finding-card robust reveal delay-1" onclick="toggleLevier(this)">
+                <div class="ftag">Levier robuste</div>
+                <h4>Collaboration structurée</h4>
+                <p>Revues d'hypothèses entre pairs, confrontations argumentées, partage d'expertise métier. Plus efficace que le travail solitaire, à condition que les échanges soient réels et pas seulement formels.</p>
+                <div class="fdetail">La collaboration la plus efficace identifiée dans l'enquête n'est pas la réunion de compte rendu, mais la revue d'hypothèses : un format court où l'analyste soumet ses hypothèses de travail à un pair qui cherche activement à les invalider. Ce type d'échange, inspiré du <em>Red Teaming</em> anglo-saxon, est pratiqué spontanément par 8 des 20 analystes interrogés, souvent de façon informelle. Là où il est institutionnalisé, il produit des effets mesurables sur la qualité des livrables.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+            <div class="finding-card robust reveal delay-2" onclick="toggleLevier(this)">
+                <div class="ftag">Levier robuste</div>
+                <h4>Technologies d'aide à l'analyse</h4>
+                <p>Timelines, cartographies conceptuelles, matrices de comparaison, LLM comme assistant. Ces outils amplifient le raisonnement, à condition de ne pas se substituer à l'analyste.</p>
+                <div class="fdetail">Les technologies les plus citées par les analystes comme ayant changé leur pratique ne sont pas les plateformes de veille (qui servent la collecte) mais les outils de structuration du raisonnement : cartographies visuelles, timelines d'événements, matrices d'hypothèses concurrentes. Les LLM arrivent comme nouvelle catégorie : utiles pour élargir l'éventail d'hypothèses et formuler des contre-arguments, dangereux s'ils court-circuitent le jugement. Le triangle H-O-T s'applique ici : l'outil sans méthode ni gouvernance produit de l'apparence d'analyse, pas de l'analyse.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+            <div class="finding-card moderate reveal" onclick="toggleLevier(this)">
+                <div class="ftag">Levier modéré</div>
+                <h4>Gouvernance analytique</h4>
+                <p>Clarté sur qui commande quoi, à qui, avec quels garde-fous et délais. Levier puissant quand bien calibré, bureaucratique et contre-productif quand il est excessif ou mal ajusté.</p>
+                <div class="fdetail">La gouvernance analytique recouvre la question du commanditaire (qui formule le besoin ?), du circuit de validation (qui relit, qui valide, qui diffuse ?) et des garde-fous (checklists, revues collégiales, obligations de traçabilité). L'enquête révèle que son absence est préjudiciable, mais que son excès l'est tout autant. Le levier est modéré car son efficacité est très contextuelle : une gouvernance efficace dans une grande organisation de défense sera paralysante dans une PME de conseil.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+            <div class="finding-card moderate reveal delay-1" onclick="toggleLevier(this)">
+                <div class="ftag">Levier modéré</div>
+                <h4>Capitalisation des analyses</h4>
+                <p>Conservation et réutilisation des analyses produites, mémoire organisationnelle. Sous-utilisé en pratique, trop souvent sacrifié sous pression temporelle.</p>
+                <div class="fdetail">La capitalisation pose deux questions distinctes : celle de la mémoire des raisonnements (conserver non seulement la conclusion, mais le chemin qui y a mené) et celle de la réutilisation (pouvoir retrouver et mobiliser ce qui a été produit). Les deux sont quasi absentes dans les organisations étudiées. La pression du temps est citée comme facteur principal : on produit, on diffuse, on passe au suivant. La traçabilité du raisonnement, pourtant condition de l'apprentissage organisationnel, est sacrifiée en premier.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+            <div class="finding-card system reveal delay-2" onclick="toggleLevier(this)">
+                <div class="ftag">Résultat systémique</div>
+                <h4>L'obstacle majeur : l'absence de feedback</h4>
+                <p>La performance analytique ne peut s'améliorer sans retour sur l'usage des productions. Or, dans la plupart des organisations étudiées, l'analyste ne sait jamais si son travail a été utile.</p>
+                <div class="fdetail">C'est le résultat le plus frappant de l'enquête. Dans 17 des 20 organisations étudiées, il n'existe pas de dispositif permettant à l'analyste de savoir si sa note a été lue, si elle a influencé une décision, si ses hypothèses se sont révélées exactes ou non. Cette absence de boucle de feedback prive le système de sa capacité d'apprentissage. Elle explique en partie pourquoi les mêmes erreurs analytiques se répètent d'une note à l'autre. La recommandation est claire : sans évaluation de l'usage des productions, aucun investissement dans les leviers H, O ou T ne peut produire d'amélioration durable.</div>
+                <span class="ftoggle">+ En savoir plus</span>
+            </div>
+        </div>
+
+        <div class="systemic-box reveal">
+            <p class="big-q">« Ni l'analyste solitaire, ni l'outil, ni même une organisation ad hoc ne suffisent.<br>Seul un équilibre entre ces éléments peut amener à plus d'efficience. »</p>
+            <div class="tag-line">La nature systémique de la performance analytique : résultat central de la thèse</div>
+        </div>
+
+        <!-- IA sous-section -->
+        <div class="reveal" style="margin-top:2.5rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+                <div style="width:3px;height:2rem;background:var(--blue);border-radius:2px;flex-shrink:0;"></div>
+                <h3 style="font-size:1.2rem;color:var(--navy);">L'IA dans la pratique analytique : amplificateur ou substitut ?</h3>
+            </div>
+            <p style="color:#374151;margin-bottom:1.25rem;">L'enquête révèle un usage encore émergent mais croissant des LLM parmi les analystes interrogés. Trois usages émergent : l'élargissement de l'espace des hypothèses, la formulation de contre-arguments (une forme de <em>red teaming</em> accéléré), et la synthèse rapide de corpus documentaires volumineux.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-bottom:1.25rem;">
+                <div style="background:#eff6ff;border-radius:8px;padding:1rem 1.1rem;border-top:3px solid var(--blue);">
+                    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1d4ed8;margin-bottom:0.4rem;">Usage positif</div>
+                    <p style="font-size:0.86rem;color:#1e3a8a;margin:0;">Élargir l'espace des hypothèses, générer des contre-arguments, résumer des corpus. L'IA comme interlocuteur critique, pas comme oracle.</p>
+                </div>
+                <div style="background:#fff7ed;border-radius:8px;padding:1rem 1.1rem;border-top:3px solid var(--orange);">
+                    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:0.4rem;">Risque principal</div>
+                    <p style="font-size:0.86rem;color:#7c2d12;margin:0;">Le court-circuit du jugement : utiliser la réponse de l'IA comme conclusion plutôt que comme point de départ. L'apparence d'analyse sans le raisonnement.</p>
+                </div>
+                <div style="background:#f0fdf4;border-radius:8px;padding:1rem 1.1rem;border-top:3px solid var(--green);">
+                    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#047857;margin-bottom:0.4rem;">Principe directeur</div>
+                    <p style="font-size:0.86rem;color:#064e3b;margin:0;">Le triangle H-O-T s'applique intégralement : l'outil sans méthode (T sans H) produit de l'apparence d'analyse. Traiter l'IA comme un pair junior — compétent pour générer des options, incapable de valider une hypothèse, du moins pour l'instant.</p>
+                </div>
+            </div>
+            <p style="font-size:0.875rem;color:#4b5563;border-left:3px solid var(--blue);padding-left:1rem;">L'enjeu de traçabilité est central : si l'IA a contribué au raisonnement, cette contribution doit être documentée. L'analyste reste l'auteur du raisonnement et en porte la responsabilité. C'est la condition pour que l'IA reste un amplificateur et ne devienne pas un substitut.</p>
+        </div>
+
+        <div class="verbatims reveal" style="margin-top:2.5rem;">
+            <h3 style="font-size:1.2rem; margin-bottom:1.25rem; color:var(--navy);">Ce que disent les analystes</h3>
+            <div class="verbatim-grid">
+                <div class="verbatim-card">
+                    <p>« On produit des notes, elles partent dans la nature. Six mois après, on ne sait toujours pas si ça a servi à quelque chose. L'absence de retour, c'est ce qui démotive le plus. »</p>
+                    <div class="verbatim-meta">Analyste, secteur Défense · 22 ans de pratique</div>
+                </div>
+                <div class="verbatim-card">
+                    <p>« Le vrai problème n'est pas de trouver l'information. C'est de décider ce qu'elle veut dire quand on en a trop, et que chaque source dit quelque chose de différent. »</p>
+                    <div class="verbatim-meta">Analyste, secteur Énergie · 18 ans de pratique</div>
+                </div>
+                <div class="verbatim-card">
+                    <p>« Quand je formule des hypothèses à voix haute avec un collègue, je vois des choses que je n'aurais jamais vues seul. La confrontation, c'est un outil analytique à part entière. »</p>
+                    <div class="verbatim-meta">Analyste, secteur Conseil · 14 ans de pratique</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="reveal" style="margin-top:2rem;font-size:0.875rem;color:var(--muted);">La thèse débouche sur <strong>58 recommandations</strong> structurées par dimension H-O-T : former, organiser, outiller, toujours en maintenant l'équilibre du triangle. L'intégralité figure en Annexe 3 du manuscrit.</p>
+    </div>
+</section>
+
+<!-- ========== CONTRIBUTIONS ========== -->
+<section id="contributions">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Apports</span>
+            <h2 class="section-title">Trois types de contributions</h2>
+            <div class="rule"></div>
+        </div>
+
+        <div class="contrib-grid">
+            <div class="contrib-card reveal">
+                <div class="contrib-icon">📚</div>
+                <h3>Théoriques</h3>
+                <p>Établir l'<em>intelligence analysis</em> comme objet scientifique à part entière. Fonder une épistémologie pragmatiste du renseignement. Clarifier un champ traversé par 37 terminologies différentes pour la seule notion de veille (Lesca et Caron-Fasan).</p>
+            </div>
+            <div class="contrib-card reveal delay-1">
+                <div class="contrib-icon">🔬</div>
+                <h3>Méthodologiques</h3>
+                <p>Le protocole F-T-T comme cadre de formation applicable juniors et seniors. La pyramide H-O-T comme outil de diagnostic des points de blocage. Un cadre d'audit multicritères pour évaluer l'équilibre H-O-T dans une organisation.</p>
+            </div>
+            <div class="contrib-card reveal delay-2">
+                <div class="contrib-icon">⚙️</div>
+                <h3>Praxéologiques</h3>
+                <p>58 recommandations opérationnelles structurées. Ritualiser la revue d'hypothèses. Standardiser des formats courts et traçables. Clarifier la gouvernance. Suivre l'impact réel des productions analytiques sur les décisions.</p>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2.5rem;">
+            <h3 style="font-size:1.25rem;margin-bottom:1rem;">Quatre pistes de recherche pour la suite</h3>
+            <div class="perspectives-grid">
+                <div class="persp-card">
+                    <div class="num">1.</div>
+                    <h5>Validation expérimentale</h5>
+                    <p>Tester le protocole F-T-T in vivo, avec comparaison avant/après sur des cas concrets et mesures d'impact.</p>
+                </div>
+                <div class="persp-card">
+                    <div class="num">2.</div>
+                    <h5>IA et formulation d'hypothèses</h5>
+                    <p>Explorer l'usage des LLM comme assistants à la formulation et au test d'hypothèses en contexte VUCA.</p>
+                </div>
+                <div class="persp-card">
+                    <div class="num">3.</div>
+                    <h5>Métriques de performance</h5>
+                    <p>Développer des indicateurs objectifs pour évaluer l'impact réel de l'analyse sur les décisions stratégiques.</p>
+                </div>
+                <div class="persp-card">
+                    <div class="num">4.</div>
+                    <h5>Études comparatives</h5>
+                    <p>Confronter les pratiques françaises à d'autres traditions analytiques, notamment anglo-saxonnes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONCLUSION ========== -->
+<section id="conclusion" class="dark">
+    <div class="wrap">
+        <div class="concl-center reveal">
+            <span class="eyebrow">Pour conclure</span>
+
+            <p class="concl-big" style="margin-top:1.75rem;">
+                L'analyse de l'information est avant tout un <span class="concl-accent">art de la transmutation</span> : de l'information brute et incertaine à la décision éclairée.
+            </p>
+
+            <p style="color:rgba(255,255,255,0.7);margin-bottom:1.5rem;">Cette transmutation ne pourra jamais être entièrement automatisée. Elle requiert du sens, de la responsabilité éthique et de l'imagination créatrice : l'abduction. Le défi du déluge informationnel n'est pas technologique. Il est méthodologique et culturel.</p>
+
+            <p style="color:rgba(255,255,255,0.65);margin-bottom:1.5rem;">L'analyste ne pourra jamais effacer totalement l'incertitude. Une part d'intuitif, de non-testable demeure inévitable : cette étincelle de génie humain parfois seule capable d'éclairer l'inextricable. Il ne s'agit pas de soumettre l'intuition à la raison, mais de pousser la rationalité aussi loin que possible dans l'irrationalisable.</p>
+
+            <div class="concl-final">
+                « Accepter l'incertitude et se donner les moyens de la gérer. »
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ACCÈS ========== -->
+<section id="acces" class="grey">
+    <div class="wrap">
+        <div class="reveal">
+            <span class="eyebrow">Accès à la thèse</span>
+            <h2 class="section-title">Lire, télécharger, citer</h2>
+            <div class="rule"></div>
+        </div>
+
+        <div class="access-grid">
+            <div class="reveal">
+                <h3 style="font-size:1.25rem;margin-bottom:0.75rem;">Télécharger le manuscrit complet</h3>
+                <p style="color:var(--muted);">La thèse complète (561 pages) est disponible en accès libre sur HAL et en téléchargement direct.</p>
+
+                <div style="margin:1.5rem 0;">
+                    <a href="these-deschamps-2025.pdf" class="access-btn btn-primary" download>
+                        ↓ Télécharger le PDF
+                    </a>
+                    <a href="https://hal.science/tel-05590732" class="access-btn btn-ghost" target="_blank" rel="noopener">
+                        Consulter sur HAL
+                    </a>
+                    <a href="https://theses.fr" class="access-btn btn-ghost" target="_blank" rel="noopener">
+                        theses.fr (bientôt)
+                    </a>
+                </div>
+
+                <div class="cite-box">
+                    <div class="cite-label">Référence bibliographique</div>
+                    <p>Deschamps, C. (2025). <em>La phase d'analyse dans le cycle de la veille stratégique : conditions d'une mise en œuvre pertinente dans le cadre d'organisations françaises.</em> Thèse de doctorat en Sciences de l'information et de la communication, Université de Poitiers.</p>
+                </div>
+            </div>
+
+            <div class="bio-card reveal delay-1">
+                <h4>Christophe Deschamps</h4>
+                <p>Consultant et formateur en veille stratégique et intelligence économique, 25 ans d'expérience professionnelle dans le domaine. Fondateur du blog <em>Outils Froids</em> depuis 2003.</p>
+                <p>Docteur en Sciences de l'Information et de la Communication, Université de Poitiers, CEREGE, 2025.</p>
+                <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;">
+                    <a href="https://www.linkedin.com/in/chdeschamps/" class="bio-link" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn · Publications et contact
+                    </a>
+                    <a href="https://outilsfroids.net" class="bio-link" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        outilsfroids.net
+                    </a>
+                    <a href="mailto:christophe.de@gmail.com" class="bio-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        christophe.de@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <p>© 2025 Christophe Deschamps &nbsp;·&nbsp; Thèse de doctorat en SIC &nbsp;·&nbsp; Université de Poitiers &nbsp;·&nbsp; CEREGE</p>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+
+/* --- Scroll reveal --- */
+(function() {
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+})();
+
+/* --- Pyramid interactive --- */
+const pyrData = {
+    1: {
+        title: 'Fondations H-O-T',
+        body: 'Le socle irréductible : compétences individuelles (H), processus et gouvernance (O), outils et technologies (T). Sans ces fondations, aucun levier ne peut s\'activer efficacement. Les trois dimensions doivent être co-présentes.',
+        obstacle: 'Obstacles associés : manque de formation, processus mal définis, outils non adaptés aux besoins réels.'
+    },
+    2: {
+        title: 'Leviers robustes',
+        body: 'Leviers validés par l\'enquête comme ayant le plus d\'impact sur la performance : compétences analytiques (cadrage, esprit critique, mise en récit), collaboration (revues d\'hypothèses, confrontation argumentée), technologies d\'aide à l\'analyse (timelines, LLM, matrices).',
+        obstacle: 'Obstacles : biais cognitifs non identifiés, doublons et bruit informationnel, pistes chronophages (rabbit holes).'
+    },
+    3: {
+        title: 'Leviers modérés',
+        body: 'Leviers à l\'efficacité contextuelle, dépendant de la maturité organisationnelle : gouvernance de l\'analyse (clarté des rôles, circuits de validation), capitalisation des productions analytiques (mémoire organisationnelle, réutilisation).',
+        obstacle: 'Obstacles : processus mal définis ou trop formels, prolifération de communautés non coordonnées.'
+    },
+    4: {
+        title: 'Dimensions d\'impact',
+        body: 'Les trois effets produits par l\'alignement des leviers : fluidité et cohérence (circulation sans ruptures, acteurs alignés), valeur décisionnelle (impact réel et mesurable sur les choix du décideur), qualité mesurée (fiabilité, traçabilité, défendabilité de l\'analyse).',
+        obstacle: 'Obstacles : rabbit holes, perte de traçabilité du raisonnement, errements analytiques non détectés.'
+    },
+    5: {
+        title: 'Performance analytique',
+        body: 'Le résultat final et systémique : une analyse qui éclaire effectivement la décision. La performance n\'est pas la somme des leviers, elle émerge de leur orchestration équilibrée. Aucun élément seul ne suffit : ni l\'outil, ni l\'organisation, ni l\'analyste.',
+        obstacle: 'Obstacle majeur : l\'absence de boucle de feedback. Dans la plupart des organisations, l\'analyste ne sait jamais si son travail a été utile.'
+    }
+};
+
+let openLevel = null;
+
+function togglePyr(n) {
+    const box = document.getElementById('pyrInfo');
+    if (openLevel === n) {
+        box.classList.remove('open');
+        openLevel = null;
+        return;
+    }
+    const d = pyrData[n];
+    box.innerHTML = '<strong>' + d.title + '</strong><br><br>' + d.body +
+        '<br><br><span style="color:#f4a070;font-style:italic;">' + d.obstacle + '</span>';
+    box.classList.add('open');
+    openLevel = n;
+}
+
+/* --- HOT triangle interactive --- */
+function hotClick(dim) {
+    document.querySelectorAll('.hot-panel-content, .hot-panel-default').forEach(function(p) {
+        p.style.display = 'none';
+    });
+    var panel = document.getElementById('hotPanel' + dim);
+    if (panel) panel.style.display = 'block';
+    document.querySelectorAll('.hot-vtx').forEach(function(v) {
+        v.classList.remove('active');
+    });
+    var vtx = document.getElementById('vtx' + dim);
+    if (vtx) vtx.classList.add('active');
+}
+
+/* --- Leviers cliquables --- */
+function toggleLevier(card) {
+    card.classList.toggle('open');
+    var toggle = card.querySelector('.ftoggle');
+    if (toggle) toggle.textContent = card.classList.contains('open') ? '− Réduire' : '+ En savoir plus';
+}
+
+/* --- Smooth anchor scroll --- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
+</script>
 </body>
 </html>
